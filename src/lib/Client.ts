@@ -14,10 +14,12 @@ export class UserClient extends SapphireClient {
 				Intents.FLAGS.GUILD_MESSAGES
 			],
 			loadDefaultErrorListeners: true,
+			loadMessageCommandListeners: true,
 			logger: {
-				level: LogLevel.Debug
+				level: LogLevel.Info
 			}
 		} )
+		container.cache = {}
 		container.sequelize = sequelize
 		container.stores.register( new ModelStore() )
 	}
@@ -29,6 +31,13 @@ export class UserClient extends SapphireClient {
 
 declare module '@sapphire/pieces' {
 	interface Container {
+		cache: Partial<CacheEntries>
 		sequelize: Sequelize
+	}
+}
+
+export interface CacheEntries {
+	channels: {
+		[ key: string ]: Record<string, string | null>
 	}
 }

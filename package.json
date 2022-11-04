@@ -1,5 +1,5 @@
 {
-  "name": "sapphire-template",
+  "name": "mew",
   "version": "1.0.0",
   "private": true,
   "main": "dist/main.js",
@@ -10,9 +10,10 @@
     "build:watch": "yarn tsc -w --incremental",
     "lint": "eslint src/ --ext .ts --cache",
     "lint:fix": "eslint src/ --fix --ext .ts --cache",
-    "start": "yarn node --enable-source-maps dist/main.js"
+    "start": "doppler run -- yarn node --enable-source-maps dist/main.js"
   },
   "dependencies": {
+    "@bitomic/material-colors": "^1.0.0",
     "@discordjs/rest": "^1.1.0",
     "@sapphire/decorators": "^4.3.8",
     "@sapphire/framework": "3.0.0-next.c6c1eee.0",
