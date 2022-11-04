@@ -11,13 +11,15 @@ export class UserClient extends SapphireClient {
 			defaultPrefix: env.DISCORD_PREFIX ?? '!',
 			intents: [
 				Intents.FLAGS.GUILDS,
+				Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
 				Intents.FLAGS.GUILD_MESSAGES
 			],
 			loadDefaultErrorListeners: true,
 			loadMessageCommandListeners: true,
 			logger: {
 				level: LogLevel.Info
-			}
+			},
+			partials: [ 'CHANNEL', 'MESSAGE', 'REACTION' ]
 		} )
 		container.cache = {}
 		container.sequelize = sequelize

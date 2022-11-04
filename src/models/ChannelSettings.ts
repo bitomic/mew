@@ -24,12 +24,15 @@ export class ChannelSettingModel extends Model<IChannelSettingInterface> {
 		this.model = this.container.sequelize.define<IChannelSettingInterface>(
 			'ChannelSetting',
 			{
-				channel: {
+				channel: DataTypes.STRING,
+				setting: {
 					primaryKey: true,
 					type: DataTypes.STRING
 				},
-				setting: DataTypes.STRING,
-				value: DataTypes.STRING
+				value: {
+					primaryKey: true,
+					type: DataTypes.STRING
+				}
 			},
 			{
 				tableName: 'ChannelSettings',
