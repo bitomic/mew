@@ -7,7 +7,7 @@ on:
       - dependencies
 
 jobs:
-  check version:
+  check:
     name: Check for a version bump
     runs-on: ubuntu-latest
     steps:
