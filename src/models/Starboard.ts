@@ -2,11 +2,11 @@ import { MessageActionRow, MessageButton } from 'discord.js'
 import type { ModelStatic, Model as SequelizeModel } from 'sequelize'
 import type { PieceContext, PieceOptions } from '@sapphire/pieces'
 import { ChannelTypes } from '../utils'
+import Colors from '@bitomic/material-colors'
 import { DataTypes } from 'sequelize'
 import Imgur from 'imgur'
 import type { Message } from 'discord.js'
 import { Model } from '../framework'
-import Colors from '@bitomic/material-colors'
 import { env } from '../lib'
 
 interface IStarboardMessage {
@@ -47,12 +47,11 @@ export class StarboardMessageModel extends Model<IStarboardMessageInterface> {
 	}
 
 	public async getPinnedMessage( message: string ): Promise<string | null> {
-		const cache = this.container.cache.starboard
-		const stored = cache.get( message )
+		const stored = await this.container.redis.get( `starboard-${ message }` )
 		if ( stored ) return stored
 
 		const result = ( await this.model.findOne( { where: { message } } ) )?.pinnedMessage ?? null
-		if ( result ) cache.set( message, result )
+		if ( result ) await this.container.redis.set( `starboard-${ message }`, result )
 
 		return result
 	}
@@ -102,7 +101,7 @@ export class StarboardMessageModel extends Model<IStarboardMessageInterface> {
 		} )
 			.catch( () => null )
 		if ( !pin ) return
-		this.container.cache.starboard.set( message.id, pin.id )
+		await this.container.redis.set( `starboard-${ message.id }`, pin.id )
 
 		await this.model.create( {
 			channel: message.channelId,

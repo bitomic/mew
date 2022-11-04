@@ -41,40 +41,45 @@ export class ChannelSettingModel extends Model<IChannelSettingInterface> {
 		)
 	}
 
+	public async getChannelCache( channel: string, setting: string ): Promise<string | null> {
+		const cached = await this.container.redis.get( `cs-${ channel }:${ setting }` )
+		return cached ?? null
+	}
+
+	public async getSettingCache( setting: string, value: string ): Promise<string | null> {
+		const cached = await this.container.redis.get( `cs-${ setting }:${ value }` )
+		return cached ?? null
+	}
+
+	public async setCache( channel: string, setting: string, value: string ): Promise<void> {
+		await this.container.redis.set( `cs-${ channel }:${ setting }`, value )
+		await this.container.redis.set( `cs-${ setting }:${ value }`, channel )
+	}
+
 	public async find( setting: string, value: string ): Promise<string | null> {
-		const cache = this.container.cache.channels ?? {}
-		for ( const [ channelId, channelCache ] of Object.entries( cache ) ) {
-			if ( channelCache[ setting ] === value ) return channelId
-		}
+		const cached = await this.getSettingCache( setting, value )
+		if ( cached ) return cached
 
 		const channel = ( await this.model.findOne( {
 			where: { setting, value }
 		} ) )?.getDataValue( 'channel' ) ?? null
+		if ( channel ) await this.setCache( channel, setting, value )
 		return channel
 	}
 
 	public async set( channel: string, setting: string, value: string ): Promise<void> {
 		await this.model.upsert( { channel, setting, value } )
-		this.setCache( channel, setting, value )
-	}
-
-	public setCache( channel: string, setting: string, value: string | null ): void {
-		const channels = this.container.cache.channels ?? {}
-		const channelData = channels[ channel ] ?? {}
-		channels[ channel ] ??= channelData
-		channelData[ setting ] = value
+		await this.setCache( channel, setting, value )
 	}
 
 	public async get( channel: string, setting: string ): Promise<string | null> {
-		const cacheValue = this.container.cache.channels?.[ channel ]?.[ setting ]
-		if ( cacheValue !== undefined ) {
-			return cacheValue
-		}
+		const cached = await this.getChannelCache( channel, setting )
+		if ( cached ) return cached
 
 		const value = ( await this.model.findOne( {
 			where: { channel, setting }
 		} ) )?.getDataValue( 'value' ) ?? null
-		this.setCache( channel, setting, value )
+		if ( value ) await this.setCache( channel, setting, value )
 
 		return value
 	}
