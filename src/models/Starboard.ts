@@ -4,10 +4,10 @@ import type { PieceContext, PieceOptions } from '@sapphire/pieces'
 import { ChannelTypes } from '../utils'
 import Colors from '@bitomic/material-colors'
 import { DataTypes } from 'sequelize'
+import { env } from '../lib'
 import Imgur from 'imgur'
 import type { Message } from 'discord.js'
 import { Model } from '../framework'
-import { env } from '../lib'
 
 interface IStarboardMessage {
 	channel: string
