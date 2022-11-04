@@ -1,4 +1,5 @@
 export const enum ChannelTypes {
 	FANART = 'fan-art',
-	LOGS = 'logs'
+	LOGS = 'logs',
+	STARBOARD = 'starboard'
 }

@@ -21,7 +21,10 @@ export class UserClient extends SapphireClient {
 			},
 			partials: [ 'CHANNEL', 'MESSAGE', 'REACTION' ]
 		} )
-		container.cache = {}
+		container.cache = {
+			channels: {},
+			starboard: new Map()
+		}
 		container.sequelize = sequelize
 		container.stores.register( new ModelStore() )
 	}
@@ -33,7 +36,7 @@ export class UserClient extends SapphireClient {
 
 declare module '@sapphire/pieces' {
 	interface Container {
-		cache: Partial<CacheEntries>
+		cache: CacheEntries
 		sequelize: Sequelize
 	}
 }
@@ -42,4 +45,5 @@ export interface CacheEntries {
 	channels: {
 		[ key: string ]: Record<string, string | null>
 	}
+	starboard: Map<string, string>
 }

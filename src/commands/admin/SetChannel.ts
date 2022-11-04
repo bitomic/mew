@@ -30,7 +30,8 @@ export class UserCommand extends Command {
 					.setRequired( true )
 					.addChoices(
 						{ name: 'Fan-art', value: ChannelTypes.FANART },
-						{ name: 'Registros', value: ChannelTypes.LOGS }
+						{ name: 'Registros', value: ChannelTypes.LOGS },
+						{ name: 'Starboard', value: ChannelTypes.STARBOARD }
 					) ),
 			await this.container.stores.get( 'models' ).get( 'commands' )
 				.getData( this.name )
