@@ -4,7 +4,6 @@ import { DataTypes } from 'sequelize'
 import { Model } from '../framework'
 
 interface IKeyV {
-	guild: string
 	key: string
 	value: string
 }
@@ -24,10 +23,6 @@ export class KeyVModel extends Model<IKeyVInterface> {
 		this.model = this.container.sequelize.define<IKeyVInterface>(
 			'KeyV',
 			{
-				guild: {
-					primaryKey: true,
-					type: DataTypes.STRING
-				},
 				key: {
 					primaryKey: true,
 					type: DataTypes.STRING
@@ -43,14 +38,19 @@ export class KeyVModel extends Model<IKeyVInterface> {
 		)
 	}
 
-	public async set( guild: string, key: string, value: string ): Promise<void> {
+	public async set( key: string, value: string ): Promise<void> {
+		await this.container.redis.set( key, value )
 		await this.model.upsert(
-			{ guild, key, value },
+			{ key, value },
 		)
 	}
 
-	public async get( guild: string, key: string ): Promise<string | null> {
-		const result = await this.model.findOne( { where: { guild, key } } )
+	public async get( key: string ): Promise<string | null> {
+		const cached = await this.container.redis.get( key )
+		if ( cached ) return cached
+
+		const result = await this.model.findOne( { where: { key } } )
+		if ( result ) await this.container.redis.set( key, result.value )
 		return result?.getDataValue( 'value' ) ?? null
 	}
 }
