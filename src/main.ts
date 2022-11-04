@@ -8,6 +8,7 @@ import { container } from '@sapphire/framework'
 	} catch ( e ) {
 		container.logger.error( e )
 		client.destroy()
+		
 		process.exit( 1 )
 	}
 } )()
