@@ -29,7 +29,9 @@ export class UserCommand extends Command {
 					.setDescription( 'Elige el tipo del canal.' )
 					.setRequired( true )
 					.addChoices(
+						{ name: 'Combates', value: ChannelTypes.BATTLE },
 						{ name: 'Fan-art', value: ChannelTypes.FANART },
+						{ name: 'Intercambios', value: ChannelTypes.TRADE },
 						{ name: 'Registros', value: ChannelTypes.LOGS },
 						{ name: 'Starboard', value: ChannelTypes.STARBOARD }
 					) ),
