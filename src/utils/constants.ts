@@ -5,3 +5,5 @@ export const enum ChannelTypes {
 	STARBOARD = 'starboard',
 	TRADE = 'trade'
 }
+
+export const games = [ 'Pokémon Showdown', 'Pokémon Diamante Brillante/Perla Reluciente', 'Pokémon Espada/Escudo' ]

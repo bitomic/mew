@@ -1,6 +1,6 @@
+import { announceBattle, games } from '../utils'
 import type { ApplicationCommandRegistry, CommandOptions } from '@sapphire/framework'
 import { Modal, TextInputComponent } from 'discord.js'
-import { announceBattle } from '../utils'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Command } from '@sapphire/framework'
 import type { CommandInteraction } from 'discord.js'
@@ -20,11 +20,7 @@ export class UserCommand extends Command {
 					.setName( 'juego' )
 					.setDescription( 'Especifica en qué juego buscas combatir.' )
 					.setRequired( true )
-					.addChoices( ...[
-						'Pokémon Showdown',
-						'Pokémon Diamante Brillante/Perla Reluciente',
-						'Pokémon Espada/Escudo'
-					].map( i => ( { name: i, value: i } ) ) ) )
+					.addChoices( ...games.map( i => ( { name: i, value: i } ) ) ) )
 				.addStringOption( input => input
 					.setName( 'formato' )
 					.setDescription( 'Elige un formato específico' )
