@@ -6,7 +6,7 @@ import { type ModalSubmitInteraction } from 'discord.js'
 
 @ApplyOptions<InteractionHandlerOptions>( {
 	interactionHandlerType: InteractionHandlerTypes.ModalSubmit
-	} )
+} )
 export class UserButton extends InteractionHandler {
 	public override parse( interaction: ModalSubmitInteraction ) {
 		if ( interaction.customId !== 'modal-battle' ) return this.none()

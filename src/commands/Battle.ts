@@ -9,7 +9,7 @@ import type { CommandInteraction } from 'discord.js'
 	description: 'Anuncia que buscas un combate Pokémon.',
 	enabled: true,
 	name: 'combate'
-	} )
+} )
 export class UserCommand extends Command {
 	public override async registerApplicationCommands( registry: ApplicationCommandRegistry ): Promise<void> {
 		registry.registerChatInputCommand(

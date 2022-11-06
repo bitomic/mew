@@ -9,7 +9,7 @@ import { Permissions } from 'discord.js'
 	description: 'Reload all application commands.',
 	enabled: true,
 	name: 'reload-commands'
-	} )
+} )
 export class UserCommand extends Command {
 	public override async registerApplicationCommands( registry: ApplicationCommandRegistry ): Promise<void> {
 		registry.registerChatInputCommand(

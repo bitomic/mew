@@ -9,7 +9,7 @@ import { games } from '../utils'
 	description: 'Anuncia que buscas un intercambio de Pokémon.',
 	enabled: true,
 	name: 'intercambiar'
-	} )
+} )
 export class UserCommand extends Command {
 	public override async registerApplicationCommands( registry: ApplicationCommandRegistry ): Promise<void> {
 		registry.registerChatInputCommand(

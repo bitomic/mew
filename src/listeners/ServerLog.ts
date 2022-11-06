@@ -6,7 +6,7 @@ import type { MessageOptions } from 'discord.js'
 
 @ApplyOptions<ListenerOptions>( {
 	event: 'server-log'
-	} )
+} )
 export class UserEvent extends Listener {
 	public async run( payload: MessageOptions ): Promise<void> {
 		const channelId = await this.container.stores.get( 'models' ).get( 'channel-settings' )
