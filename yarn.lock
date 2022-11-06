@@ -718,10 +718,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.11.56":
-  version: 16.11.56
-  resolution: "@types/node@npm:16.11.56"
-  checksum: b4efade16eb08a39810921c54a1637e69c8f3184a20d87e8fe74d557d9bda73f0829ac318e2a30a32b1903e4b099812defd1dfe438be70b98dbfbea5b0d99a53
+"@types/node@npm:^16.18.3":
+  version: 16.18.3
+  resolution: "@types/node@npm:16.18.3"
+  checksum: 6b8ba2ea5d842f7986e366cb9184c54d273d492784dc62e08fd5afeae938d9b61aec6e4222d2541cd18f9b1412ba361bbcb3f4204fb003608af80a2a6af959f9
   languageName: node
   linkType: hard
 
@@ -2757,7 +2757,7 @@ __metadata:
     "@sapphire/pieces": ^3.6.0
     "@sapphire/utilities": ^3.11.0
     "@types/fs-extra": ^9.0.13
-    "@types/node": ^16.11.56
+    "@types/node": ^16.18.3
     "@typescript-eslint/eslint-plugin": ^5.42.0
     "@typescript-eslint/parser": ^5.42.0
     colorette: ^2.0.19
