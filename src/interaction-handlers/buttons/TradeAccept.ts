@@ -1,8 +1,7 @@
+import { type ButtonInteraction, type Message } from 'discord.js'
 import { InteractionHandler, type InteractionHandlerOptions, InteractionHandlerTypes } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
-import { type ButtonInteraction } from 'discord.js'
 import Colors from '@bitomic/material-colors'
-import type { Message } from 'discord.js'
 
 @ApplyOptions<InteractionHandlerOptions>( {
 	interactionHandlerType: InteractionHandlerTypes.Button

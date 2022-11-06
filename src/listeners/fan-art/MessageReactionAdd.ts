@@ -1,9 +1,7 @@
-import type { MessageReaction, User } from 'discord.js'
+import { Constants, type MessageReaction, type User } from 'discord.js'
+import { Listener, type ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { ChannelTypes } from '../../utils'
-import { Constants } from 'discord.js'
-import { Listener } from '@sapphire/framework'
-import type { ListenerOptions } from '@sapphire/framework'
 
 @ApplyOptions<ListenerOptions>( {
 	event: Constants.Events.MESSAGE_REACTION_ADD,

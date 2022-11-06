@@ -1,5 +1,4 @@
-import type { CommandInteraction, ModalSubmitInteraction } from 'discord.js'
-import { GuildMember, MessageActionRow, MessageButton } from 'discord.js'
+import { type CommandInteraction, GuildMember, MessageActionRow, MessageButton, type ModalSubmitInteraction } from 'discord.js'
 import { ChannelTypes } from '../constants'
 import Colors from '@bitomic/material-colors'
 import { container } from '@sapphire/pieces'
