@@ -20,7 +20,7 @@
     "@sapphire/pieces": "^3.6.0",
     "@sapphire/utilities": "^3.11.0",
     "colorette": "^2.0.19",
-    "discord-api-types": "0.36.2",
+    "discord-api-types": "0.37.16",
     "discord.js": "^13.8.1",
     "fs-extra": "^10.1.0",
     "imgur": "^2.2.0",
