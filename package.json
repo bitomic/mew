@@ -28,7 +28,7 @@
     "mysql2": "^2.3.3",
     "pino": "^8.4.2",
     "pino-pretty": "^9.1.0",
-    "sequelize": "^6.21.4",
+    "sequelize": "^6.25.4",
     "ts-dotenv": "^0.8.3"
   },
   "devDependencies": {
