@@ -1,4 +1,4 @@
-import { announceBattle, games } from '../../utils'
+import { announceTrade, games } from '../../utils'
 import { InteractionHandler, type InteractionHandlerOptions, InteractionHandlerTypes } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import Colors from '@bitomic/material-colors'
@@ -9,7 +9,7 @@ import { type ModalSubmitInteraction } from 'discord.js'
 	} )
 export class UserButton extends InteractionHandler {
 	public override parse( interaction: ModalSubmitInteraction ) {
-		if ( interaction.customId !== 'modal-battle' ) return this.none()
+		if ( interaction.customId !== 'modal-trade' ) return this.none()
 		return this.some()
 	}
 
@@ -17,7 +17,8 @@ export class UserButton extends InteractionHandler {
 		await interaction.deferReply( { ephemeral: true } )
 
 		const game = interaction.fields.getTextInputValue( 'game' )
-		const format = interaction.fields.getTextInputValue( 'format' )
+		const type = interaction.fields.getTextInputValue( 'type' )
+		const details = interaction.fields.getTextInputValue( 'details' )
 
 		if ( !games.includes( game ) ) {
 			void interaction.editReply( {
@@ -29,6 +30,6 @@ export class UserButton extends InteractionHandler {
 			return
 		}
 
-		await announceBattle( interaction, game, format )
+		await announceTrade( interaction, game, type, details )
 	}
 }

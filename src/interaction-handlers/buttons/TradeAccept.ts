@@ -9,17 +9,17 @@ import type { Message } from 'discord.js'
 	} )
 export class UserButton extends InteractionHandler {
 	public override parse( interaction: ButtonInteraction ) {
-		if ( interaction.customId !== 'battle-cancel' ) return this.none()
+		if ( interaction.customId !== 'trade-accept' ) return this.none()
 		return this.some()
 	}
 
 	public async run( interaction: ButtonInteraction<'cached' | 'raw'> ) {
 		await interaction.deferReply( { ephemeral: true } )
-		if ( interaction.message.content.match( /\d+/ )?.at( 0 ) !== interaction.user.id ) {
+		if ( interaction.message.content.match( /\d+/ )?.at( 0 ) === interaction.user.id ) {
 			void interaction.editReply( {
 				embeds: [ {
 					color: Colors.red.s800,
-					description: 'No puedes cancelar los combates de otros jugadores.'
+					description: 'No puedes aceptar tu propio intercambio.'
 				} ]
 			} )
 			return
@@ -43,23 +43,37 @@ export class UserButton extends InteractionHandler {
 			message = msg
 		}
 
-		await message.edit( {
-			components: [],
-			content: 'Este desafío ya no está disponible.',
-			embeds: message.embeds.map( i => {
-				i.color = Colors.amber.s800
-				return i
+		let { thread } = message
+		if ( !thread ) {
+			thread = await message.startThread( {
+				autoArchiveDuration: 'MAX',
+				name: `Intercambio de ${ message.embeds.at( 0 )?.author?.name.split( '#' ).at( 0 ) ?? 'alguien' }`
 			} )
-		} )
-		if ( message.hasThread ) {
-			await message.thread?.setLocked( true )
-			await message.thread?.setArchived( true )
 		}
 
+		const isInThread = await thread.members.fetch( interaction.user.id )
+			.catch( () => null )
+		if ( isInThread ) {
+			void interaction.editReply( {
+				embeds: [ {
+					color: Colors.amber.s800,
+					description: `Ya te encuentras en la sala de este intercambio: <#${ thread.id }>.`
+				} ]
+			} )
+			return
+		}
+
+		await thread.send( {
+			content: `${ message.content } y <@!${ interaction.user.id }>`,
+			embeds: [ {
+				color: Colors.green.s800,
+				description: 'Alguien ha aceptado el intercambio.'
+			} ]
+		} )
 		void interaction.editReply( {
 			embeds: [ {
 				color: Colors.teal.s800,
-				description: 'He cerrado el desafío.'
+				description: `Acabo de anunciar tu interés en el intercambio en <#${ thread.id }>, ¡buena suerte!`
 			} ]
 		} )
 	}
