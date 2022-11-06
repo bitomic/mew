@@ -6,7 +6,7 @@ import type { Message } from 'discord.js'
 
 @ApplyOptions<InteractionHandlerOptions>( {
 	interactionHandlerType: InteractionHandlerTypes.Button
-	} )
+} )
 export class UserButton extends InteractionHandler {
 	public override parse( interaction: ButtonInteraction ) {
 		if ( interaction.customId !== 'battle-accept' ) return this.none()

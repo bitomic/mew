@@ -11,7 +11,7 @@ import { Permissions } from 'discord.js'
 	description: 'Define para qué se usa un canal.',
 	enabled: true,
 	name: 'tipo-del-canal'
-	} )
+} )
 export class UserCommand extends Command {
 	public override async registerApplicationCommands( registry: ApplicationCommandRegistry ): Promise<void> {
 		registry.registerChatInputCommand(

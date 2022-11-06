@@ -9,7 +9,7 @@ import type { Message } from 'discord.js'
 @ApplyOptions<ListenerOptions>( {
 	event: Constants.Events.MESSAGE_CREATE,
 	name: 'fan-art-message'
-	} )
+} )
 export class UserEvent extends Listener {
 	public async run( message: Message ): Promise<void> {
 		if ( message.author.bot ) return

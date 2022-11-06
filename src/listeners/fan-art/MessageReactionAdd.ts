@@ -8,7 +8,7 @@ import type { ListenerOptions } from '@sapphire/framework'
 @ApplyOptions<ListenerOptions>( {
 	event: Constants.Events.MESSAGE_REACTION_ADD,
 	name: 'fan-art-reaction'
-	} )
+} )
 export class UserEvent extends Listener {
 	public async run( reaction: MessageReaction, user: User ): Promise<void> {
 		if ( user.bot ) return
