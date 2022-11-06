@@ -1,9 +1,7 @@
-import { type ApplicationCommandRegistry, Command } from '@sapphire/framework'
+import { type ApplicationCommandRegistry, Command, type CommandOptions } from '@sapphire/framework'
+import { type CommandInteraction, Permissions } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { CommandInteraction } from 'discord.js'
-import type { CommandOptions } from '@sapphire/framework'
 import { env } from '../../lib'
-import { Permissions } from 'discord.js'
 
 @ApplyOptions<CommandOptions>( {
 	description: 'Reload all application commands.',

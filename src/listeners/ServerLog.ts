@@ -1,7 +1,6 @@
+import { Listener, type ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { ChannelTypes } from '../utils'
-import { Listener } from '@sapphire/framework'
-import type { ListenerOptions } from '@sapphire/framework'
 import type { MessageOptions } from 'discord.js'
 
 @ApplyOptions<ListenerOptions>( {

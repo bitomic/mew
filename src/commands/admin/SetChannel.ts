@@ -1,11 +1,9 @@
-import type { ApplicationCommandRegistry, CommandOptions } from '@sapphire/framework'
-import type { CommandInteraction, GuildTextBasedChannel } from 'discord.js'
+import { type ApplicationCommandRegistry, Command, type CommandOptions } from '@sapphire/framework'
+import { type CommandInteraction, type GuildTextBasedChannel, Permissions } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import { ChannelType } from 'discord-api-types/v9'
+import { ChannelType } from 'discord-api-types/v10'
 import { ChannelTypes } from '../../utils'
 import { Colors } from '@bitomic/material-colors'
-import { Command } from '@sapphire/framework'
-import { Permissions } from 'discord.js'
 
 @ApplyOptions<CommandOptions>( {
 	description: 'Define para qué se usa un canal.',

@@ -1,9 +1,7 @@
 import { announceBattle, games } from '../utils'
-import type { ApplicationCommandRegistry, CommandOptions } from '@sapphire/framework'
-import { Modal, TextInputComponent } from 'discord.js'
+import { type ApplicationCommandRegistry, Command, type CommandOptions } from '@sapphire/framework'
+import { type CommandInteraction, Modal, TextInputComponent } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import { Command } from '@sapphire/framework'
-import type { CommandInteraction } from 'discord.js'
 
 @ApplyOptions<CommandOptions>( {
 	description: 'Anuncia que buscas un combate Pokémon.',
