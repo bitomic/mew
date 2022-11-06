@@ -36,7 +36,7 @@ export const announceTrade = async ( interaction: CommandInteraction | ModalSubm
 	}
 
 	const nickname = ( interaction.member instanceof GuildMember ? interaction.member.nickname : interaction.user.username ) ?? interaction.user.username
-	await channel.send( {
+	const message = await channel.send( {
 		components: [ new MessageActionRow()
 			.addComponents(
 				new MessageButton()
@@ -66,6 +66,11 @@ export const announceTrade = async ( interaction: CommandInteraction | ModalSubm
 			}
 		} ]
 	} )
+	await container.tasks.create( 'close-battle-trade', {
+		channelId,
+		messageId: message.id,
+		type: 'intercambio'
+	}, 1000 * 60 * 60 )
 
 	await interaction.editReply( {
 		embeds: [ {

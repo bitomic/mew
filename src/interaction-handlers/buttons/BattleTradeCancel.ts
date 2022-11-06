@@ -44,24 +44,23 @@ export class UserButton extends InteractionHandler {
 			message = msg
 		}
 
-		await message.edit( {
-			components: [],
-			content: `Este ${ type } ya no está disponible.`,
-			embeds: message.embeds.map( i => {
-				i.color = Colors.amber.s800
-				return i
-			} )
+		const disabledComponents = message.components.map( row => {
+			row.components.forEach( button => button.setDisabled( true ) )
+			return row
 		} )
-		if ( message.hasThread ) {
-			await message.thread?.setLocked( true )
-			await message.thread?.setArchived( true )
-		}
+		await message.edit( { components: disabledComponents } )
 
 		void interaction.editReply( {
 			embeds: [ {
 				color: Colors.teal.s800,
-				description: `He cerrado el ${ type }.`
+				description: `El ${ type } debería de ser cerrado en un par de segundos.`
 			} ]
 		} )
+
+		await this.container.tasks.create( 'close-battle-trade', {
+			channelId: interaction.channelId,
+			messageId: message.id,
+			type
+		}, 0 )
 	}
 }
