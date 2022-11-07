@@ -2,17 +2,17 @@ import { Constants, type VoiceState } from 'discord.js'
 import { Listener, type ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { ChannelTypes } from '../utils'
+import Colors from '@bitomic/material-colors'
 
 @ApplyOptions<ListenerOptions>( {
 	event: Constants.Events.VOICE_STATE_UPDATE
 } )
 export class UserEvent extends Listener {
 	public async run( oldState: VoiceState, newState: VoiceState ): Promise<void> {
-		if ( !oldState.channelId ) {
+		if ( newState.channelId && oldState.channelId !== newState.channelId ) {
 			await this.voiceChannelJoin( oldState, newState )
-			return
 		}
-		if ( newState.channelId !== oldState.channelId ) {
+		if ( oldState.channelId && newState.channelId !== oldState.channelId ) {
 			await this.voiceChannelLeft( oldState )
 		}
 	}
@@ -31,6 +31,19 @@ export class UserEvent extends Listener {
 		if ( !vc ) return
 
 		await newState.setChannel( vc )
+		const textChannel = newState.channel.parent?.children.find( c => c.type === 'GUILD_TEXT' )
+		if ( !textChannel || textChannel.type !== 'GUILD_TEXT' ) return
+
+		const commandId = [ ...this.container.applicationCommandRegistries.acquire( 'vc' ).chatInputCommands.values() ].find( i => i.match( /\d+/ ) )
+		const command = commandId ? `</vc:${ commandId }>` : '`/vc`'
+
+		await textChannel.send( {
+			content: `<@!${ newState.id }>`,
+			embeds: [ {
+				color: Colors.teal.s800,
+				description: `He creado una nueva sala de voz para ti y tus amigos. Puedes configurarlo usando ${ command }.\n\nPor el momento nadie puede unirse, debes de aumentar el límite usando \`/vc límite 2\` en este canal, cambiando el número según cuántos usuarios quieres que puedan unirse como máximo.`
+			} ]
+		} )
 	}
 
 	protected async voiceChannelLeft( oldState: VoiceState ): Promise<void> {
