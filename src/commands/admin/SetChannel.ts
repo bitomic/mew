@@ -21,7 +21,7 @@ export class UserCommand extends Command {
 					.setName( 'canal' )
 					.setDescription( 'Canal a configurar' )
 					.setRequired( true )
-					.addChannelTypes( ChannelType.GuildText ) )
+					.addChannelTypes( ChannelType.GuildText, ChannelType.GuildVoice ) )
 				.addStringOption( input => input
 					.setName( 'tipo' )
 					.setDescription( 'Elige el tipo del canal.' )
@@ -30,6 +30,7 @@ export class UserCommand extends Command {
 						{ name: 'Combates', value: ChannelTypes.BATTLE },
 						{ name: 'Fan-art', value: ChannelTypes.FANART },
 						{ name: 'Intercambios', value: ChannelTypes.TRADE },
+						{ name: 'Nuevo canal de voz', value: ChannelTypes.NEW_VC },
 						{ name: 'Registros', value: ChannelTypes.LOGS },
 						{ name: 'Starboard', value: ChannelTypes.STARBOARD }
 					) ),
