@@ -31,6 +31,9 @@ export class UserClient extends SapphireClient {
 							password: env.REDIS_PASSWORD,
 							port: env.REDIS_PORT,
 							username: env.REDIS_USERNAME
+						},
+						defaultJobOptions: {
+							removeOnComplete: true
 						}
 					}
 				} )
