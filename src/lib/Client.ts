@@ -1,11 +1,12 @@
 import { container, LogLevel, SapphireClient } from '@sapphire/framework'
 import { env } from './environment'
-import { Intents } from 'discord.js'
+import { Constants, Intents } from 'discord.js'
 import { ModelStore } from '../framework'
 import Redis from 'ioredis'
 import { ScheduledTaskRedisStrategy } from '@sapphire/plugin-scheduled-tasks/register-redis'
 import type { Sequelize } from 'sequelize'
 import { sequelize } from './Sequelize'
+import { v4 } from 'uuid'
 
 export class UserClient extends SapphireClient {
 	public constructor() {
@@ -31,10 +32,22 @@ export class UserClient extends SapphireClient {
 							password: env.REDIS_PASSWORD,
 							port: env.REDIS_PORT,
 							username: env.REDIS_USERNAME
+						},
+						defaultJobOptions: {
+							removeOnComplete: true
 						}
 					}
 				} )
 			}
+		} )
+		container.ready = () => new Promise<true>( resolve => {
+			if ( this.isReady() ) resolve( true )
+			const identifier = v4()
+			container.logger.info( `A function is waiting for a ready event (${ identifier })` )
+			this.on( Constants.Events.CLIENT_READY, () => {
+				resolve( true )
+				container.logger.info( `The ready event was sent to ${ identifier }` )
+			} )
 		} )
 		container.redis = new Redis( {
 			db: env.REDIS_DB,
@@ -54,6 +67,7 @@ export class UserClient extends SapphireClient {
 
 declare module '@sapphire/pieces' {
 	interface Container {
+		ready: () => Promise<true>
 		redis: Redis
 		sequelize: Sequelize
 	}

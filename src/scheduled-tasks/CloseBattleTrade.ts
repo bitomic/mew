@@ -7,6 +7,8 @@ import Colors from '@bitomic/material-colors'
 } )
 export class UserTask extends ScheduledTask {
 	public async run( payload: { channelId?: string, force?: boolean, messageId?: string, type?: string } ): Promise<void> {
+		await this.container.ready()
+
 		const { channelId, force = false, messageId, type } = payload
 		if ( !channelId || !messageId || !type ) {
 			this.container.logger.warn( 'Tried to run the close-battle-trade task with an incomplete payload.', payload )
