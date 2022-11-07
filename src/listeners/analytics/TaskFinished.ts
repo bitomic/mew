@@ -3,7 +3,7 @@ import { ApplyOptions } from '@sapphire/decorators'
 import { ScheduledTaskEvents } from '@sapphire/plugin-scheduled-tasks'
 
 @ApplyOptions<ListenerOptions>( {
-	event: ScheduledTaskEvents.ScheduledTaskRun
+	event: ScheduledTaskEvents.ScheduledTaskFinished
 } )
 export class UserEvent extends Listener {
 	public run( task: string, payload: unknown ): void {
