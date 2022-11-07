@@ -40,15 +40,25 @@ export class UserClient extends SapphireClient {
 				} )
 			}
 		} )
-		container.ready = () => new Promise<true>( resolve => {
-			if ( this.isReady() ) resolve( true )
+		container.ready = async (): Promise<true> => {
+			if ( this.isReady() ) return true
+
 			const identifier = v4()
 			container.logger.info( `A function is waiting for a ready event (${ identifier })` )
-			this.on( Constants.Events.CLIENT_READY, () => {
-				resolve( true )
-				container.logger.info( `The ready event was sent to ${ identifier }` )
-			} )
-		} )
+			const logDone = () => container.logger.info( `The ready event was sent to ${ identifier }` )
+
+			await Promise.race( [
+				setTimeout( logDone, 1000 * 10 ),
+				new Promise<void>( resolve => {
+					this.on( Constants.Events.CLIENT_READY, () => {
+						logDone()
+						resolve()
+					} )
+				} )
+			] )
+
+			return true
+		}
 		container.redis = new Redis( {
 			db: env.REDIS_DB,
 			host: env.REDIS_HOST,
