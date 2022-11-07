@@ -59,6 +59,7 @@ export class UserButton extends InteractionHandler {
 
 		await this.container.tasks.create( 'close-battle-trade', {
 			channelId: interaction.channelId,
+			force: true,
 			messageId: message.id,
 			type
 		}, 0 )
