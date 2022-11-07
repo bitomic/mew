@@ -5,7 +5,9 @@ import { ApplyOptions } from '@sapphire/decorators'
 	event: Events.ChatInputCommandError
 } )
 export class UserEvent extends Listener {
-	public run( error: unknown, payload: ChatInputCommandAcceptedPayload ): void {
+	public async run( error: unknown, payload: ChatInputCommandAcceptedPayload ): Promise<void> {
+		await this.container.ready()
+
 		const { command, interaction } = payload
 
 		this.container.logger.error( `An error occurred while processing task "${ command.name }".` )

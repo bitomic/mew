@@ -6,7 +6,8 @@ import { ScheduledTaskEvents } from '@sapphire/plugin-scheduled-tasks'
 	event: ScheduledTaskEvents.ScheduledTaskFinished
 } )
 export class UserEvent extends Listener {
-	public run( task: string, payload: unknown ): void {
+	public async run( task: string, payload: unknown ): Promise<void> {
+		await this.container.ready()
 		void this.container.stores.get( 'models' ).get( 'task-analytics' )
 			.register( task, 'finished', payload )
 	}

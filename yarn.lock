@@ -853,6 +853,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^8.3.4":
+  version: 8.3.4
+  resolution: "@types/uuid@npm:8.3.4"
+  checksum: 6f11f3ff70f30210edaa8071422d405e9c1d4e53abbe50fdce365150d3c698fe7bbff65c1e71ae080cbfb8fded860dbb5e174da96fdbbdfcaa3fb3daa474d20f
+  languageName: node
+  linkType: hard
+
 "@types/validator@npm:^13.7.1":
   version: 13.7.1
   resolution: "@types/validator@npm:13.7.1"
@@ -3164,6 +3171,7 @@ __metadata:
     "@sapphire/utilities": ^3.11.0
     "@types/fs-extra": ^9.0.13
     "@types/node": ^16.18.3
+    "@types/uuid": ^8.3.4
     "@typescript-eslint/eslint-plugin": ^5.42.0
     "@typescript-eslint/parser": ^5.42.0
     bullmq: ^3.1.3
@@ -3183,6 +3191,7 @@ __metadata:
     sequelize: ^6.25.4
     ts-dotenv: ^0.8.3
     typescript: ^4.8.4
+    uuid: ^9.0.0
   languageName: unknown
   linkType: soft
 

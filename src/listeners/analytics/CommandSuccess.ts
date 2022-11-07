@@ -5,7 +5,8 @@ import { ApplyOptions } from '@sapphire/decorators'
 	event: Events.ChatInputCommandSuccess
 } )
 export class UserEvent extends Listener {
-	public run( payload: ChatInputCommandAcceptedPayload ): void {
+	public async run( payload: ChatInputCommandAcceptedPayload ): Promise<void> {
+		await this.container.ready()
 		const { command, interaction } = payload
 		void this.container.stores.get( 'models' ).get( 'command-analytics' )
 			.register( command.name, 'success', interaction.channelId, interaction.user.id )

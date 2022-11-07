@@ -6,7 +6,8 @@ import { ScheduledTaskEvents } from '@sapphire/plugin-scheduled-tasks'
 	event: ScheduledTaskEvents.ScheduledTaskError
 } )
 export class UserEvent extends Listener {
-	public run( error: unknown, task: string, payload: unknown ): void {
+	public async run( error: unknown, task: string, payload: unknown ): Promise<void> {
+		await this.container.ready()
 		this.container.logger.error( `An error occurred while processing task "${ task }".` )
 		this.container.logger.error( error )
 		void this.container.stores.get( 'models' ).get( 'task-analytics' )

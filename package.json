@@ -31,7 +31,8 @@
     "pino": "^8.7.0",
     "pino-pretty": "^9.1.1",
     "sequelize": "^6.25.4",
-    "ts-dotenv": "^0.8.3"
+    "ts-dotenv": "^0.8.3",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@bitomic/eslint-config": "^1.2.0",
@@ -39,6 +40,7 @@
     "@commitlint/config-conventional": "^17.2.0",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^16.18.3",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "eslint": "^8.27.0",
