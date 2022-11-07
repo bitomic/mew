@@ -2,6 +2,7 @@ import { type ApplicationCommandRegistry, Command, type CommandOptions } from '@
 import { type CommandInteraction, GuildMember } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import Colors from '@bitomic/material-colors'
+import { ChannelTypes } from '../utils'
 
 @ApplyOptions<CommandOptions>( {
 	description: 'Configura tu sala (canal de voz).',
@@ -50,6 +51,18 @@ export class UserCommand extends Command {
 				embeds: [ {
 					color: Colors.red.s800,
 					description: 'Este comando no puede ser usado si no estás en un canal de voz.'
+				} ]
+			} )
+			return
+		}
+
+		const newRoomChannel = await this.container.stores.get( 'models' ).get( 'channel-settings' )
+			.getSettingCache( 'type', ChannelTypes.NEW_VC )
+		if ( !newRoomChannel || !vc.parent?.children.get( newRoomChannel ) ) {
+			void interaction.editReply( {
+				embeds: [ {
+					color: Colors.red.s800,
+					description: `Solo puedes configurar canales de voz que se encuentren en la misma categoría que <#${ newRoomChannel ?? '' }>.`
 				} ]
 			} )
 			return
