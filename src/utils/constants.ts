@@ -2,6 +2,7 @@ export const enum ChannelTypes {
 	BATTLE = 'battle',
 	FANART = 'fan-art',
 	LOGS = 'logs',
+	NEW_VC = 'new-voice-chat',
 	STARBOARD = 'starboard',
 	TRADE = 'trade'
 }
