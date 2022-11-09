@@ -39,7 +39,7 @@ export class UserCommand extends Command {
 	}
 
 	public override async chatInputRun( interaction: CommandInteraction<'cached' | 'raw'> ): Promise<void> {
-		await interaction.deferReply( { ephemeral: true } )
+		await interaction.deferReply()
 		const subcommand = interaction.options.getSubcommand( true )
 
 		const guild = interaction.guild ?? await this.container.client.guilds.fetch( interaction.guildId )
