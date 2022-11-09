@@ -29,6 +29,7 @@ export class UserCommand extends Command {
 					.addChoices(
 						{ name: 'Combates', value: ChannelTypes.BATTLE },
 						{ name: 'Fan-art', value: ChannelTypes.FANART },
+						{ name: 'General', value: ChannelTypes.GENERAL },
 						{ name: 'Intercambios', value: ChannelTypes.TRADE },
 						{ name: 'Nuevo canal de voz', value: ChannelTypes.NEW_VC },
 						{ name: 'Registros', value: ChannelTypes.LOGS },
