@@ -14,6 +14,7 @@ export class UserClient extends SapphireClient {
 			defaultPrefix: env.DISCORD_PREFIX ?? '!',
 			intents: [
 				Intents.FLAGS.GUILDS,
+				Intents.FLAGS.GUILD_MEMBERS,
 				Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
 				Intents.FLAGS.GUILD_MESSAGES,
 				Intents.FLAGS.GUILD_VOICE_STATES
@@ -23,7 +24,7 @@ export class UserClient extends SapphireClient {
 			logger: {
 				level: LogLevel.Info
 			},
-			partials: [ 'CHANNEL', 'MESSAGE', 'REACTION' ],
+			partials: [ 'CHANNEL', 'GUILD_MEMBER', 'MESSAGE', 'REACTION' ],
 			tasks: {
 				strategy: new ScheduledTaskRedisStrategy( {
 					bull: {

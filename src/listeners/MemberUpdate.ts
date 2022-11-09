@@ -7,8 +7,8 @@ import { ApplyOptions } from '@sapphire/decorators'
 } )
 export class UserEvent extends Listener {
 	public async run( oldMember: GuildMember, newMember: GuildMember ): Promise<void> {
-		if ( oldMember.roles.cache.size === 0 && newMember.roles.cache.size > 0 ) {
-			const channel = await this.container.client.channels.fetch( '1038642069528399884' )
+		if ( oldMember.roles.cache.size === 1 && newMember.roles.cache.size > 1 ) {
+			const channel = await this.container.client.channels.fetch( '808463528138113044' )
 				.catch( () => null )
 			if ( !channel || channel.type !== 'GUILD_TEXT' ) return
 			await channel.send( `¡Hola, <@!${ oldMember.user.id }>!` )
