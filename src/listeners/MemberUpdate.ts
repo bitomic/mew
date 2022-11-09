@@ -8,7 +8,10 @@ import { ChannelTypes } from '../utils'
 } )
 export class UserEvent extends Listener {
 	public async run( oldMember: GuildMember, newMember: GuildMember ): Promise<void> {
-		if ( oldMember.roles.cache.size === 1 && newMember.roles.cache.size > 1 ) {
+		const hadRole = oldMember.roles.resolve( '1038645565413658675' )
+		const hasRole = newMember.roles.resolve( '1038645565413658675' )
+
+		if ( !hadRole && hasRole && newMember.roles.cache.size === 2 ) { // @everyone and the role
 			const generalId = await this.container.stores.get( 'models' ).get( 'channel-settings' )
 				.getSettingCache( 'type', ChannelTypes.GENERAL )
 			if ( !generalId ) return
