@@ -84,3 +84,10 @@ declare module '@sapphire/pieces' {
 		sequelize: Sequelize
 	}
 }
+
+declare module '@sapphire/plugin-scheduled-tasks' {
+	interface ScheduledTasks {
+		'auto-verify': never
+		'close-battle-trade': never
+	}
+}
