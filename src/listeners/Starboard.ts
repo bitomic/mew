@@ -19,7 +19,7 @@ export class UserEvent extends Listener {
 		if ( !message ) return
 
 		const count = message.reactions.resolve( '⭐' )?.count
-		if ( !count || count < 4 ) return
+		if ( !count || count < 3 ) return
 
 		const starboardMessages = models.get( 'starboard-messages' )
 		const isAlreadyPinned = await starboardMessages.has( message.id )
