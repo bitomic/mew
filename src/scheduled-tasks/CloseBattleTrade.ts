@@ -54,8 +54,3 @@ export class UserTask extends ScheduledTask {
 	}
 }
 
-declare module '@sapphire/plugin-scheduled-tasks' {
-	interface ScheduledTasks {
-		'close-battle-trade': never
-	}
-}
