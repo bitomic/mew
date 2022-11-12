@@ -3,8 +3,8 @@ name: Require version bump
 on:
   pull_request:
     branches: [ main ]
-    tags-ignore:
-      - dependencies
+    branches-ignore:
+      - 'renovate/**'
 
 jobs:
   check:
