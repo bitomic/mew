@@ -47,7 +47,7 @@ export class UserEvent extends Listener {
 			]
 			const randomEmoji = emojis[ Math.floor( Math.random() * emojis.length ) ] ?? ''
 			await channel.send( `¡Bienvenido, <@!${ newMember.user.id }>!
-				Ten una linda estadía, no olvides pasarte por <#1038669139876790302>>, puede que consigas cosas que te interesen, pero más importante, pásala bien en esté maravilloso server ${ randomEmoji }` )
+Ten una linda estadía, no olvides pasarte por <#1038669139876790302>, puede que consigas cosas que te interesen, pero más importante, pásala bien en esté maravilloso server ${ randomEmoji }` )
 		}
 	}
 }
