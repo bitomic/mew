@@ -20,11 +20,5 @@ export class UserEvent extends Listener {
 
 		await models.get( 'fanarts' ).register( message.channelId, message.id, message.author.id )
 		await message.react( '☑️' )
-		this.container.client.emit( 'server-log', {
-			embeds: [ {
-				color: Colors.indigo.s800,
-				description: `He registrado un fan-art de <@!${ message.author.id }> (${ message.author.tag } | ${ message.author.id }).`
-			} ]
-		} )
 	}
 }
