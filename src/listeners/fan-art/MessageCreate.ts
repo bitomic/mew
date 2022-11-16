@@ -2,7 +2,6 @@ import { Constants, type Message } from 'discord.js'
 import { Listener, type ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { ChannelTypes } from '../../utils'
-import Colors from '@bitomic/material-colors'
 
 @ApplyOptions<ListenerOptions>( {
 	event: Constants.Events.MESSAGE_CREATE,
