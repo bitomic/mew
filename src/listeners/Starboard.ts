@@ -14,6 +14,7 @@ export class UserEvent extends Listener {
 		const starboardId = await models.get( 'channel-settings' ).find( 'type', ChannelTypes.STARBOARD )
 		if ( !starboardId ) return
 
+		reaction = await reaction.fetch()
 		const message = await reaction.message.fetch()
 			.catch( () => null )
 		if ( !message ) return
