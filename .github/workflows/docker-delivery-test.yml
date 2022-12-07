@@ -7,6 +7,12 @@ permissions:
   packages: read
 
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print token length
+        run: echo ${{ secrets.GITHUB_TOKEN }} | wc -c
+    
   delivery:
     secrets: inherit
     uses: bitomic/utilities/.github/workflows/docker-deploy.yml@0a7e4d9c3c8a5ff625a70ff1ac212902501e59a3
