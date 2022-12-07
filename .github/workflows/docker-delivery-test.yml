@@ -1,0 +1,9 @@
+name: Docker delivery
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  delivery:
+    secrets: inherit
+    uses:     uses: bitomic/utilities/.github/workflows/docker-deploy.yml@284ab7fd667c210b7765705fc364398e7689669a
