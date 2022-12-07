@@ -7,5 +7,5 @@ jobs:
   delivery:
     permissions:
       packages: read
-    uses: bitomic/utilities/.github/workflows/docker-deploy.yml@c9f3597d27d424e21dccf0a13d1b44399fc08351
+    uses: bitomic/utilities/.github/workflows/docker-deploy.yml@1509a3370f1634d78b619f6ee79d984c504bd766
     secrets: inherit
