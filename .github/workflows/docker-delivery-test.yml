@@ -3,11 +3,10 @@ name: Docker delivery
 on:
   workflow_dispatch:
   
+permissions:
+  packages: read
+
 jobs:
   delivery:
-    permissions:
-      packages: read
-    uses: bitomic/utilities/.github/workflows/docker-deploy.yml@f1082535532a95dd86fb059a479c2f72d060942f
-    with:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     secrets: inherit
+    uses: bitomic/utilities/.github/workflows/docker-deploy.yml@f1082535532a95dd86fb059a479c2f72d060942f
