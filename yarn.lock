@@ -3188,7 +3188,7 @@ __metadata:
     pino: ^8.7.0
     pino-pretty: ^9.1.1
     rimraf: ^3.0.2
-    sequelize: ^6.25.6
+    sequelize: ^6.28.0
     ts-dotenv: ^0.9.0
     typescript: ^4.8.4
     uuid: ^9.0.0
@@ -4129,10 +4129,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"retry-as-promised@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "retry-as-promised@npm:6.1.0"
-  checksum: cde3ad5c827d3f51b9161b9453dfd5eb8b8b6c22b6b405f7294eaa1939ef1966f8bd4c8a228ce2d66a24959d1dcc48b113c4c810ecdaddec2968b6d20576329d
+"retry-as-promised@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "retry-as-promised@npm:7.0.3"
+  checksum: 0dd0ed5f255be26266a2b862d5aad52800513cc06a21003684023fd5f604b1edc6486a488672b90d37b258a58efedaa9393f479f7a047958b1e73f6c6799fca3
   languageName: node
   linkType: hard
 
@@ -4259,9 +4259,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sequelize@npm:^6.25.6":
-  version: 6.25.6
-  resolution: "sequelize@npm:6.25.6"
+"sequelize@npm:^6.28.0":
+  version: 6.28.0
+  resolution: "sequelize@npm:6.28.0"
   dependencies:
     "@types/debug": ^4.1.7
     "@types/validator": ^13.7.1
@@ -4272,7 +4272,7 @@ __metadata:
     moment: ^2.29.1
     moment-timezone: ^0.5.34
     pg-connection-string: ^2.5.0
-    retry-as-promised: ^6.1.0
+    retry-as-promised: ^7.0.3
     semver: ^7.3.5
     sequelize-pool: ^7.1.0
     toposort-class: ^1.0.1
@@ -4298,7 +4298,7 @@ __metadata:
       optional: true
     tedious:
       optional: true
-  checksum: 35baf98223ce35a0f0719d4ab6b92e85fab29e7e81eecb784881d6ccc4693afaaf299eb73e6cd6dbad84d5a6f26c145659f1bce878843eb3414f36900bb0e285
+  checksum: 7e10ba4ebabab1ed54d6769fa73cac86dd3df88415ee32dd82f01ade6e1ebd9f6672288b601bd12507eae9eb2480ba905f74c93b1e380eb335430bf43ed757e9
   languageName: node
   linkType: hard
 
