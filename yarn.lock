@@ -485,13 +485,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/async-queue@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "@sapphire/async-queue@npm:1.3.2"
-  checksum: 348f35a278bff68cb6d5e2c2219b03ce66243162522003bb14426e5fdad251300bea8ef3883043eb034c181dddd52296a519e9f377075a5b31074807fe163e76
-  languageName: node
-  linkType: hard
-
 "@sapphire/async-queue@npm:^1.5.0":
   version: 1.5.0
   resolution: "@sapphire/async-queue@npm:1.5.0"
@@ -801,13 +794,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:^2.6.2":
-  version: 2.6.2
-  resolution: "@types/node-fetch@npm:2.6.2"
+"@types/node-fetch@npm:^2.6.3":
+  version: 2.6.3
+  resolution: "@types/node-fetch@npm:2.6.3"
   dependencies:
     "@types/node": "*"
     form-data: ^3.0.0
-  checksum: 6f73b1470000d303d25a6fb92875ea837a216656cb7474f66cdd67bb014aa81a5a11e7ac9c21fe19bee9ecb2ef87c1962bceeaec31386119d1ac86e4c30ad7a6
+  checksum: b68cda58e91535a42dd5337932443c37f8e198ca1e8deeb95bd92a64a9a84d92071867b91c5eb84ee8e13f33d45a70549fe2bc11dd070a894dd561909f4d39f5
   languageName: node
   linkType: hard
 
@@ -867,12 +860,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^8.5.3":
-  version: 8.5.3
-  resolution: "@types/ws@npm:8.5.3"
+"@types/ws@npm:^8.5.4":
+  version: 8.5.4
+  resolution: "@types/ws@npm:8.5.4"
   dependencies:
     "@types/node": "*"
-  checksum: 0ce46f850d41383fcdc2149bcacc86d7232fa7a233f903d2246dff86e31701a02f8566f40af5f8b56d1834779255c04ec6ec78660fe0f9b2a69cf3d71937e4ae
+  checksum: fefbad20d211929bb996285c4e6f699b12192548afedbe4930ab4384f8a94577c9cd421acaad163cacd36b88649509970a05a0b8f20615b30c501ed5269038d1
   languageName: node
   linkType: hard
 
@@ -1746,13 +1739,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.33.3":
-  version: 0.33.3
-  resolution: "discord-api-types@npm:0.33.3"
-  checksum: e86776d1d2c39b74d7265c43774bd6d46dd206d053674ed7243d11e2e975451b292065ece28286e31692a27c5408a24a73e811455af75a2fdbb519c95b7e040b
-  languageName: node
-  linkType: hard
-
 "discord-api-types@npm:^0.33.5":
   version: 0.33.5
   resolution: "discord-api-types@npm:0.33.5"
@@ -1774,37 +1760,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord.js@npm:13.14.0":
-  version: 13.14.0
-  resolution: "discord.js@npm:13.14.0"
+"discord.js@npm:13.15.0, discord.js@npm:^13.15.0":
+  version: 13.15.0
+  resolution: "discord.js@npm:13.15.0"
   dependencies:
     "@discordjs/builders": ^0.16.0
     "@discordjs/collection": ^0.7.0
     "@sapphire/async-queue": ^1.5.0
-    "@types/node-fetch": ^2.6.2
-    "@types/ws": ^8.5.3
+    "@types/node-fetch": ^2.6.3
+    "@types/ws": ^8.5.4
     discord-api-types: ^0.33.5
     form-data: ^4.0.0
     node-fetch: ^2.6.7
-    ws: ^8.9.0
-  checksum: 1eb64e121b2c473f13e9a92639341594f69b4c91f3b616e0942e4123bb8f5696587f6c9d31fe2257273c7923488ff3c530795a144abf91df16e79e2ce84c9597
-  languageName: node
-  linkType: hard
-
-"discord.js@npm:^13.8.1":
-  version: 13.9.2
-  resolution: "discord.js@npm:13.9.2"
-  dependencies:
-    "@discordjs/builders": ^0.16.0
-    "@discordjs/collection": ^0.7.0
-    "@sapphire/async-queue": ^1.3.2
-    "@types/node-fetch": ^2.6.2
-    "@types/ws": ^8.5.3
-    discord-api-types: ^0.33.3
-    form-data: ^4.0.0
-    node-fetch: ^2.6.7
-    ws: ^8.8.1
-  checksum: e49228e2d786262ef06e611ba0d0edd3b1a773e04ce19f1536dbb5590eecc26a3667280ac8fe6801df55ae7964d01043c7060034fc306176fbbee97efce9efd6
+    ws: ^8.13.0
+  checksum: 67c8ec36acacd67111a94451bb19b1b731f15b1ebd14f645fead64ab35b2afb4bc395d606d38f7c8a099db6402a2e1c52d2674b674016eac334a57479ec3f4ae
   languageName: node
   linkType: hard
 
@@ -3201,7 +3170,7 @@ __metadata:
     bullmq: ^3.2.2
     colorette: ^2.0.19
     discord-api-types: 0.36.2
-    discord.js: 13.14.0
+    discord.js: 13.15.0
     eslint: ^8.27.0
     fs-extra: ^10.1.0
     husky: ^8.0.2
@@ -5105,22 +5074,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.8.1":
-  version: 8.8.1
-  resolution: "ws@npm:8.8.1"
-  peerDependencies:
-    bufferutil: ^4.0.1
-    utf-8-validate: ^5.0.2
-  peerDependenciesMeta:
-    bufferutil:
-      optional: true
-    utf-8-validate:
-      optional: true
-  checksum: 2152cf862cae0693f3775bc688a6afb2e989d19d626d215e70f5fcd8eb55b1c3b0d3a6a4052905ec320e2d7734e20aeedbf9744496d62f15a26ad79cf4cf7dae
-  languageName: node
-  linkType: hard
-
-"ws@npm:^8.9.0":
+"ws@npm:^8.13.0":
   version: 8.13.0
   resolution: "ws@npm:8.13.0"
   peerDependencies:
