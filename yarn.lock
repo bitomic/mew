@@ -1753,6 +1753,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"discord-api-types@npm:^0.33.5":
+  version: 0.33.5
+  resolution: "discord-api-types@npm:0.33.5"
+  checksum: 6dcaad640c5693a69c9a4f5e444e739dde11ba835164ae6fd3dd5a1ab7b4d7f96cd022ed653eeaff2c8051ead0d998a5d502a2915cfacdde596364b82d9e3b3f
+  languageName: node
+  linkType: hard
+
 "discord-api-types@npm:^0.36.2, discord-api-types@npm:^0.36.3":
   version: 0.36.3
   resolution: "discord-api-types@npm:0.36.3"
@@ -1764,6 +1771,23 @@ __metadata:
   version: 0.37.16
   resolution: "discord-api-types@npm:0.37.16"
   checksum: bf8fb1d8f83fd26be12173d5a86be0736d411f2dd1a7b5e9e29b5b5880bb96cefd4a253ed4d36b36b58e12105eda29dff53569f0d1d3c51cf05c6789e904e506
+  languageName: node
+  linkType: hard
+
+"discord.js@npm:13.14.0":
+  version: 13.14.0
+  resolution: "discord.js@npm:13.14.0"
+  dependencies:
+    "@discordjs/builders": ^0.16.0
+    "@discordjs/collection": ^0.7.0
+    "@sapphire/async-queue": ^1.5.0
+    "@types/node-fetch": ^2.6.2
+    "@types/ws": ^8.5.3
+    discord-api-types: ^0.33.5
+    form-data: ^4.0.0
+    node-fetch: ^2.6.7
+    ws: ^8.9.0
+  checksum: 1eb64e121b2c473f13e9a92639341594f69b4c91f3b616e0942e4123bb8f5696587f6c9d31fe2257273c7923488ff3c530795a144abf91df16e79e2ce84c9597
   languageName: node
   linkType: hard
 
@@ -3177,7 +3201,7 @@ __metadata:
     bullmq: ^3.2.2
     colorette: ^2.0.19
     discord-api-types: 0.36.2
-    discord.js: ^13.8.1
+    discord.js: 13.14.0
     eslint: ^8.27.0
     fs-extra: ^10.1.0
     husky: ^8.0.2
@@ -5093,6 +5117,21 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: 2152cf862cae0693f3775bc688a6afb2e989d19d626d215e70f5fcd8eb55b1c3b0d3a6a4052905ec320e2d7734e20aeedbf9744496d62f15a26ad79cf4cf7dae
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.9.0":
+  version: 8.13.0
+  resolution: "ws@npm:8.13.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 53e991bbf928faf5dc6efac9b8eb9ab6497c69feeb94f963d648b7a3530a720b19ec2e0ec037344257e05a4f35bd9ad04d9de6f289615ffb133282031b18c61c
   languageName: node
   linkType: hard
 
