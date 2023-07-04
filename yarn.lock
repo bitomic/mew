@@ -3179,7 +3179,7 @@ __metadata:
     lint-staged: ^13.0.3
     mysql2: ^2.3.3
     pino: ^8.7.0
-    pino-pretty: ^9.1.1
+    pino-pretty: ^9.4.1
     rimraf: ^3.0.2
     sequelize: ^6.25.6
     ts-dotenv: ^0.9.0
@@ -3815,9 +3815,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino-pretty@npm:^9.1.1":
-  version: 9.1.1
-  resolution: "pino-pretty@npm:9.1.1"
+"pino-pretty@npm:^9.4.1":
+  version: 9.4.1
+  resolution: "pino-pretty@npm:9.4.1"
   dependencies:
     colorette: ^2.0.7
     dateformat: ^4.6.3
@@ -3835,7 +3835,7 @@ __metadata:
     strip-json-comments: ^3.1.1
   bin:
     pino-pretty: bin.js
-  checksum: c1d148aa0c5f2d1034cf76c0b397cf9725923d16343e9dff78d56b564090c1c86208aae94f1208f0fb936f456eece7eab6264095337540f42d91aaa13e5b8935
+  checksum: 0fa272382398afe0854f5cdd94263cb311a3bf038dfa1fad5c9ddff6612d7ec108f5e7e8b7ee070ed953354ab0c542f1f165f976a2229933c44c7f6a783f4990
   languageName: node
   linkType: hard
 
