@@ -396,44 +396,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:2.1.2"
+"@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:3.0.2"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-darwin-x64@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@msgpackr-extract/msgpackr-extract-darwin-x64@npm:2.1.2"
+"@msgpackr-extract/msgpackr-extract-darwin-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-darwin-x64@npm:3.0.2"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-linux-arm64@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm64@npm:2.1.2"
+"@msgpackr-extract/msgpackr-extract-linux-arm64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm64@npm:3.0.2"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-linux-arm@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm@npm:2.1.2"
+"@msgpackr-extract/msgpackr-extract-linux-arm@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm@npm:3.0.2"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-linux-x64@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@msgpackr-extract/msgpackr-extract-linux-x64@npm:2.1.2"
+"@msgpackr-extract/msgpackr-extract-linux-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-x64@npm:3.0.2"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-win32-x64@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@msgpackr-extract/msgpackr-extract-win32-x64@npm:2.1.2"
+"@msgpackr-extract/msgpackr-extract-win32-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-win32-x64@npm:3.0.2"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -1270,19 +1270,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bullmq@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "bullmq@npm:3.2.2"
+"bullmq@npm:^5.4.6":
+  version: 5.4.6
+  resolution: "bullmq@npm:5.4.6"
   dependencies:
     cron-parser: ^4.6.0
-    glob: ^8.0.3
-    ioredis: ^5.2.2
-    lodash: ^4.17.21
-    msgpackr: ^1.6.2
-    semver: ^7.3.7
+    ioredis: ^5.3.2
+    msgpackr: ^1.10.1
+    node-abort-controller: ^3.1.1
+    semver: ^7.5.4
     tslib: ^2.0.0
     uuid: ^9.0.0
-  checksum: 69d98a608fb83d26a98093a107300939d1f1ce674becc6af40a81e9624db5db27b68f60cf6e27fce0b5f2605fc6469120762d7ca8cad65f832e69914618cf1bf
+  checksum: e771f7f9636873de0cb984d037ce6d283dbd1ee285589fc2e2cfa9d3a5f1d0fa48da3a6162b0d3175cbb3d21caf25c5e491d40e493f1682ff53651d0ca93e753
   languageName: node
   linkType: hard
 
@@ -1699,6 +1698,13 @@ __metadata:
   version: 2.0.1
   resolution: "denque@npm:2.0.1"
   checksum: ec398d1e3c6c8d4f5213dcf9ad74d7faa3b461e29a0019c9742b49a97ac5e16aa7134db45fa9d841e318e7722dd1ba670a474fde9a5b0d870b3a5fc6fe914c30
+  languageName: node
+  linkType: hard
+
+"denque@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "denque@npm:2.1.0"
+  checksum: 1d4ae1d05e59ac3a3481e7b478293f4b4c813819342273f3d5b826c7ffa9753c520919ba264f377e09108d24ec6cf0ec0ac729a5686cbb8f32d797126c5dae74
   languageName: node
   linkType: hard
 
@@ -2377,7 +2383,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^8.0.0, glob@npm:^8.0.1, glob@npm:^8.0.3":
+"glob@npm:^8.0.0, glob@npm:^8.0.1":
   version: 8.0.3
   resolution: "glob@npm:8.0.3"
   dependencies:
@@ -2661,7 +2667,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ioredis@npm:^5.2.2, ioredis@npm:^5.2.4":
+"ioredis@npm:^5.2.4":
   version: 5.2.4
   resolution: "ioredis@npm:5.2.4"
   dependencies:
@@ -2675,6 +2681,23 @@ __metadata:
     redis-parser: ^3.0.0
     standard-as-callback: ^2.1.0
   checksum: c3a7df407a41ae516bede8b6db853c568198b13fe4a4785f66be5cd541087121b9d45fb9a6b1b6a5fb668c29ce52ab4685642b994803bdfa0a35f794ea8ef7ae
+  languageName: node
+  linkType: hard
+
+"ioredis@npm:^5.3.2":
+  version: 5.3.2
+  resolution: "ioredis@npm:5.3.2"
+  dependencies:
+    "@ioredis/commands": ^1.1.1
+    cluster-key-slot: ^1.1.0
+    debug: ^4.3.4
+    denque: ^2.1.0
+    lodash.defaults: ^4.2.0
+    lodash.isarguments: ^3.1.0
+    redis-errors: ^1.2.0
+    redis-parser: ^3.0.0
+    standard-as-callback: ^2.1.0
+  checksum: 9a23559133e862a768778301efb68ae8c2af3c33562174b54a4c2d6574b976e85c75a4c34857991af733e35c48faf4c356e7daa8fb0a3543d85ff1768c8754bc
   languageName: node
   linkType: hard
 
@@ -3167,7 +3190,7 @@ __metadata:
     "@types/uuid": ^8.3.4
     "@typescript-eslint/eslint-plugin": ^5.43.0
     "@typescript-eslint/parser": ^5.43.0
-    bullmq: ^3.2.2
+    bullmq: ^5.4.6
     colorette: ^2.0.19
     discord-api-types: 0.36.2
     discord.js: 13.15.0
@@ -3399,18 +3422,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msgpackr-extract@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "msgpackr-extract@npm:2.1.2"
+"msgpackr-extract@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "msgpackr-extract@npm:3.0.2"
   dependencies:
-    "@msgpackr-extract/msgpackr-extract-darwin-arm64": 2.1.2
-    "@msgpackr-extract/msgpackr-extract-darwin-x64": 2.1.2
-    "@msgpackr-extract/msgpackr-extract-linux-arm": 2.1.2
-    "@msgpackr-extract/msgpackr-extract-linux-arm64": 2.1.2
-    "@msgpackr-extract/msgpackr-extract-linux-x64": 2.1.2
-    "@msgpackr-extract/msgpackr-extract-win32-x64": 2.1.2
+    "@msgpackr-extract/msgpackr-extract-darwin-arm64": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-darwin-x64": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-linux-arm": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-linux-arm64": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-linux-x64": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-win32-x64": 3.0.2
     node-gyp: latest
-    node-gyp-build-optional-packages: 5.0.3
+    node-gyp-build-optional-packages: 5.0.7
   dependenciesMeta:
     "@msgpackr-extract/msgpackr-extract-darwin-arm64":
       optional: true
@@ -3426,19 +3449,19 @@ __metadata:
       optional: true
   bin:
     download-msgpackr-prebuilds: bin/download-prebuilds.js
-  checksum: bf068baa690d3e5c5609c10aa363901ac43d3f32b9d89f9dfb77293afa866eb1b943482338da6c38d50790a66c966fd7e0fbc9187b2a35f40f253931f649f97f
+  checksum: 5adb809b965bac41c310e60373d54c955fe78e4d134ab036d0f9ee5b322cec0a739878d395e17c1ac82d840705896b2dafae6a8cc04ad34c14d2de4b06b58330
   languageName: node
   linkType: hard
 
-"msgpackr@npm:^1.6.2":
-  version: 1.7.2
-  resolution: "msgpackr@npm:1.7.2"
+"msgpackr@npm:^1.10.1":
+  version: 1.10.1
+  resolution: "msgpackr@npm:1.10.1"
   dependencies:
-    msgpackr-extract: ^2.1.2
+    msgpackr-extract: ^3.0.2
   dependenciesMeta:
     msgpackr-extract:
       optional: true
-  checksum: 156cf8938667c3a191feedaed05c8a2d7c95b53d0834c32928e849a2bd93292e4eba33e3601c79cc4cc79023161d658e91472f1719d0d5c63fb1d0f2b142fa07
+  checksum: e422d18b01051598b23701eebeb4b9e2c686b9c7826b20f564724837ba2b5cd4af74c91a549eaeaf8186645cc95e8196274a4a19442aa3286ac611b98069c194
   languageName: node
   linkType: hard
 
@@ -3488,6 +3511,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-abort-controller@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "node-abort-controller@npm:3.1.1"
+  checksum: 2c340916af9710328b11c0828223fc65ba320e0d082214a211311bf64c2891028e42ef276b9799188c4ada9e6e1c54cf7a0b7c05dd9d59fcdc8cd633304c8047
+  languageName: node
+  linkType: hard
+
 "node-fetch@npm:^2.6.7":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
@@ -3502,14 +3532,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp-build-optional-packages@npm:5.0.3":
-  version: 5.0.3
-  resolution: "node-gyp-build-optional-packages@npm:5.0.3"
+"node-gyp-build-optional-packages@npm:5.0.7":
+  version: 5.0.7
+  resolution: "node-gyp-build-optional-packages@npm:5.0.7"
   bin:
     node-gyp-build-optional-packages: bin.js
     node-gyp-build-optional-packages-optional: optional.js
     node-gyp-build-optional-packages-test: build-test.js
-  checksum: be3f0235925c8361e5bc1a03848f5e24815b0df8aa90bd13f1eac91cd86264bbb8b7689ca6cd083b02c8099c7b54f9fb83066c7bb77c2389dc4eceab921f084f
+  checksum: bcb4537af15bcb3811914ea0db8f69284ca10db1cc7543a167a4c41ae4b9b5044b133f789fdadad0b7adc6931f6ae7def3c75b0bc7b05836881aae52400163e6
   languageName: node
   linkType: hard
 
@@ -4235,6 +4265,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 5eafe6102bea2a7439897c1856362e31cc348ccf96efd455c8b5bc2c61e6f7e7b8250dc26b8828c1d76a56f818a7ee907a36ae9fb37a599d3d24609207001d60
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.5.4":
+  version: 7.6.0
+  resolution: "semver@npm:7.6.0"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 7427f05b70786c696640edc29fdd4bc33b2acf3bbe1740b955029044f80575fc664e1a512e4113c3af21e767154a94b4aa214bf6cd6e42a1f6dba5914e0b208c
   languageName: node
   linkType: hard
 
