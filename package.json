@@ -22,7 +22,7 @@
     "@sapphire/utilities": "^3.11.0",
     "bullmq": "^3.2.2",
     "colorette": "^2.0.19",
-    "discord-api-types": "0.36.2",
+    "discord-api-types": "0.37.103",
     "discord.js": "13.15.0",
     "fs-extra": "^10.1.0",
     "imgur": "^2.2.0",
