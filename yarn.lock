@@ -3184,7 +3184,7 @@ __metadata:
     sequelize: ^6.25.6
     ts-dotenv: ^0.9.0
     typescript: ^4.8.4
-    uuid: ^9.0.0
+    uuid: ^12.0.0
   languageName: unknown
   linkType: soft
 
@@ -4947,6 +4947,15 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "uuid@npm:12.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 0e0c2d137f61c7a44a9aefcd58e8df3957960ae2899f8dea42d2842304d8c0a42a052fc23240f4bc83fb96403f20af5b3c92b1e4402bb48f708dabee62ecd1a7
   languageName: node
   linkType: hard
 
